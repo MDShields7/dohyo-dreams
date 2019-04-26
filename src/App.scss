@@ -1,0 +1,32 @@
+@import './reset';
+@import './_variables';
+
+html {
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+.container {
+  width: 94%;
+  margin: auto;
+}
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.nav-void {
+  width: 100%;
+  height: 56px;
+}
+body {
+  font-family: $LibreFranklin;
+  background-color: $col-rest-green;
+}
+nav {
+  color: $font-white;
+}
