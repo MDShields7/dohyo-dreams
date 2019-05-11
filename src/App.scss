@@ -1,5 +1,6 @@
 @import './reset';
 @import './_variables';
+@import './breakpoints';
 
 html {
   box-sizing: border-box;
@@ -10,14 +11,22 @@ html {
 *::after {
   box-sizing: inherit;
 }
-.container {
-  width: 94%;
-  margin: auto;
-}
+// .container {
+//   width: 94%;
+//   margin: auto;
+// }
 .row {
   width: 100%;
   display: flex;
   flex-direction: row;
+}
+.column {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.space-betw {
+  justify-content: space-between;
 }
 .nav-void {
   width: 100%;
@@ -27,6 +36,30 @@ body {
   font-family: $LibreFranklin;
   background-color: $col-rest-green;
 }
-nav {
-  color: $font-white;
+// nav {
+//   color: $font-white;
+// }
+h1 {
+  font-size: 2rem;
+  margin-top: 2rem;
 }
+h2 {
+  font-size: 1.75rem;
+  margin-top: 1.75rem;
+}
+h3 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+}
+h4 {
+  font-size: 1.25rem;
+  margin-top: 1.25rem;
+}
+p {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+// h1, h2, h3, h4, p {
+//   margin-top: 1rem;
+// }
