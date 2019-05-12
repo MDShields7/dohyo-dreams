@@ -11,8 +11,9 @@ export default class Navbar extends Component {
     }
   }
   toggleNav = () => {
+    let currentState = this.state.toggleNav;
     this.setState({
-      toggleNav: !this.state.toggleMenu
+      toggleNav: !currentState
     })
   }
   render() {
@@ -25,15 +26,16 @@ export default class Navbar extends Component {
             <Link className="nav-logo" to="/">
               <img src={logo} alt="" />
             </Link>
-
-            <div className='nav-links'>
-              <div>
-                <Link className="nav-text" to="/about">Admin</Link>
-              </div>
-              <div>
-                <Link className="nav-text" to="/about">About</Link>
-              </div>
-            </div>
+            <section className={this.state.toggleNav ? 'show' : ''}>
+              <ul>
+                <li>
+                  <Link className="nav-text" to="/about"> Admin</Link>
+                </li>
+                <li>
+                  <Link className="nav-text" to="/about">About</Link>
+                </li>
+              </ul>
+            </section>
 
           </div>
         </div>

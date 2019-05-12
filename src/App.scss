@@ -28,10 +28,10 @@ html {
 .space-betw {
   justify-content: space-between;
 }
-.nav-void {
-  width: 100%;
-  height: 56px;
-}
+// .nav-void {
+//   width: 100%;
+//   height: 56px;
+// }
 body {
   font-family: $LibreFranklin;
   background-color: $col-rest-green;
@@ -41,11 +41,11 @@ body {
 // }
 h1 {
   font-size: 2rem;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 h2 {
   font-size: 1.75rem;
-  margin-top: 1.75rem;
+  margin-top: 1.5rem;
 }
 h3 {
   font-size: 1.5rem;
