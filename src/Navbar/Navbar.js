@@ -35,10 +35,13 @@ export default class Navbar extends Component {
             <section className={this.state.toggleNav ? 'show' : ''} onClick={this.toggleNav}>
               <ul>
                 <li>
-                  <Link className="nav-text" to="/admin"> Admin</Link>
+                  <Link className="nav-text" to="/banzuke">Banzuke</Link>
                 </li>
                 <li>
                   <Link className="nav-text" to="/about">About</Link>
+                </li>
+                <li>
+                  <Link className="nav-text" to="/admin"> Admin</Link>
                 </li>
               </ul>
             </section>

@@ -1,4 +1,6 @@
 @import '../breakpoints.scss';
+$menu-height: 150px;
+
 nav {
   top: -1px;
   position: -webkit-sticky;
@@ -15,7 +17,7 @@ ul {
   justify-content: flex-end;
 
   @include breakpoint($screen-xsml){
-    height: 100px;
+    height: $menu-height;
     background-color: #e5e5e5;
     display: flex;
     flex-direction: column;
@@ -36,16 +38,13 @@ section {
     position: fixed;
     bottom: 0px;
     left: 0px;
-    height: 100px;
+    height: $menu-height;
     width: 100%;
-    transform: translate(0px, 100px);
+    transform: translate(0px, $menu-height);
     z-index: 3;
     transition: .3s ease-in-out;
-    ul{
-
-    }
     li {
-      height: 50px;
+      height: $menu-height/3;
       width: 100%;
       z-index: 3;
       display: flex;

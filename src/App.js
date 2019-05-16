@@ -4,6 +4,7 @@ import About from './About/About';
 import Admin from './Admin/Admin';
 import Api from './Api/Api';
 import Navbar from './Navbar/Navbar';
+import Banzuke from './Banzuke/Banzuke';
 import './App.scss';
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
           <Route exact path='/' component={Api} />
           <Route path='/about' component={About} />
           <Route path='/admin' component={Admin} />
+          <Route path='/banzuke' component={Banzuke} />
         </Switch>
 
       </div>
