@@ -11,10 +11,6 @@ html {
 *::after {
   box-sizing: inherit;
 }
-// .container {
-//   width: 94%;
-//   margin: auto;
-// }
 .row {
   width: 100%;
   display: flex;
@@ -25,20 +21,13 @@ html {
   display: flex;
   flex-direction: column;
 }
-.space-betw {
+.space-between {
   justify-content: space-between;
 }
-// .nav-void {
-//   width: 100%;
-//   height: 56px;
-// }
 body {
   font-family: $LibreFranklin;
   background-color: $col-rest-green;
 }
-// nav {
-//   color: $font-white;
-// }
 h1 {
   font-size: 2rem;
   margin-top: 1.5rem;
@@ -59,7 +48,3 @@ p {
   margin-top: 1rem;
   font-size: 1rem;
 }
-
-// h1, h2, h3, h4, p {
-//   margin-top: 1rem;
-// }
