@@ -11,6 +11,23 @@ html {
 *::after {
   box-sizing: inherit;
 }
+.container {
+  margin: auto;
+  width: 80%;
+  @include breakpoint($screen-xsml){
+    width: 92%;
+  }
+  @include breakpoint($screen-sml){
+    
+  }
+  @include breakpoint($screen-med){
+    
+  }
+  @include breakpoint($screen-lrg){
+    max-width:1000px;
+    
+  }
+}
 .row {
   width: 100%;
   display: flex;

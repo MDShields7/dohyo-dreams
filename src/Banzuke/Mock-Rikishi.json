@@ -1,56 +1,65 @@
-{
-  "1": {
+[
+  {
     "name": "Hakuho",
     "birthPlace": "Mongolia",
     "stable": "Miyagano",
-    "rank": "Y1E"
+    "rank": "Y1E",
+    "img": 1
   },
-  "2": {
+  {
     "name": "Kakuryu",
     "birthPlace": "Mongolia",
     "stable": "Izutsu",
-    "rank": "Y1W"
+    "rank": "Y1W",
+    "img": 2
   },
-  "3": {
+  {
     "name": "Goeido",
     "birthPlace": "Osaka",
     "stable": "Sakaigawa",
-    "rank": "O1E"
+    "rank": "O1E",
+    "img": 3
   },
-  "4": {
-    "name": "Goeido",
-    "birthPlace": "Osaka",
-    "stable": "Sakaigawa",
-    "rank": "O1E"
-  },
-  "5": {
+  {
     "name": "Takayasu",
     "birthPlace": "Ibaraki",
     "stable": "Tagonoura",
-    "rank": "O1W"
+    "rank": "O1W",
+    "img": 4
   },
-  "6": {
+  {
     "name": "Takakeisho",
     "birthPlace": "Hyogo",
     "stable": "Chiganoura",
-    "rank": "O2E"
+    "rank": "O2E",
+    "img": 5
   },
-  "7": {
+  {
     "name": "Ichinojo",
     "birthPlace": "Mongolia",
     "stable": "Minato",
-    "rank": "S1E"
+    "rank": "S1E",
+    "img": 6
   },
-  "8": {
+  {
     "name": "Tochinoshin",
     "birthPlace": "Georgia",
     "stable": "Kasugano",
-    "rank": "S1W"
+    "rank": "S1W",
+    "img": 7
   },
-  "9": {
+  {
     "name": "Aoiyama",
     "birthPlace": "Bulgaria",
     "stable": "Kasugano",
-    "rank": "K1E"
+    "rank": "K1E",
+    "img": 8
+  },
+  {
+    "name": "Mitakeumi",
+    "birthPlace": "Nagano",
+    "stable": "Dewanoumi",
+    "rank": "K1W",
+    "img": 9
   }
-}
+]

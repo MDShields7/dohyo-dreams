@@ -1,0 +1,19 @@
+@import '../breakpoints';
+
+.container {
+  margin: auto;
+  width: 80%;
+  @include breakpoint($screen-xsml){
+    width: 98%;
+  }
+  @include breakpoint($screen-sml){
+    
+  }
+  @include breakpoint($screen-med){
+    
+  }
+  @include breakpoint($screen-lrg){
+    max-width:1000px;
+    
+  }
+}

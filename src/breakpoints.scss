@@ -5,35 +5,3 @@ $screen-xsml: 0px 640px;
 $screen-sml: 640px;
 $screen-med: 768px;
 $screen-lrg: 1024px;
-
-
-.container {
-  margin: auto;
-  width: 80%;
-  @include breakpoint($screen-xsml){
-    
-  }
-  @include breakpoint($screen-sml){
-    
-  }
-  @include breakpoint($screen-med){
-    
-  }
-  @include breakpoint($screen-lrg){
-    max-width:1000px;
-    
-  }
-}
-// .nav {
-//   color: $font-white;
-//   @include breakpoint($screen-sml){
-
-//   }
-//   @include breakpoint($screen-med){
-
-//   }
-//   @include breakpoint($screen-lrg){
-//     max-width:1000px;
-
-//   }
-// }

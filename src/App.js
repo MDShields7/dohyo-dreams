@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
-import About from './About/About';
+import AboutAPI from './About/AboutAPI';
 import Admin from './Admin/Admin';
 import Api from './Api/Api';
 import Navbar from './Navbar/Navbar';
@@ -16,7 +16,7 @@ class App extends Component {
         {/* <div className='nav-void'></div> */}
         <Switch>
           <Route exact path='/' component={Api} />
-          <Route path='/about' component={About} />
+          <Route path='/API' component={AboutAPI} />
           <Route path='/admin' component={Admin} />
           <Route path='/banzuke' component={Banzuke} />
         </Switch>

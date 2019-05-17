@@ -6,6 +6,7 @@ nav {
   position: -webkit-sticky;
   position: sticky;
   background-color: white;
+  z-index:1px;
 }
 
 ul {
@@ -61,7 +62,7 @@ nav .show {
 nav .show-2 {
   @include breakpoint($screen-xsml){
     display: initial;
-    z-index: 1;
+    z-index: 2;
     position: fixed;
     top: 0px;
     left: 0px;
@@ -83,7 +84,6 @@ nav .menu {
   }
 }
 .nav-logo {
-
   padding: .5rem 0rem;
 }
 .nav-right {
@@ -95,5 +95,7 @@ nav .menu {
 .nav-text {
   font-size:1.5em;
   margin: .5em;
+  @include breakpoint($screen-xsml){
   margin: auto;
+  }
 }

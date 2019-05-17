@@ -38,7 +38,7 @@ export default class Navbar extends Component {
                   <Link className="nav-text" to="/banzuke">Banzuke</Link>
                 </li>
                 <li>
-                  <Link className="nav-text" to="/about">About</Link>
+                  <Link className="nav-text" to="/API">API</Link>
                 </li>
                 <li>
                   <Link className="nav-text" to="/admin"> Admin</Link>
