@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../assets/dohyo-logo-36h.png";
 import Menu from "../assets/menu-dark.svg"
 import MenuOn from "../assets/menu-light.svg"

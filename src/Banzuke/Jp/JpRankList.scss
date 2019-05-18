@@ -32,14 +32,20 @@
 .j-c {
   justify-content: center;
 }
+.gutter {
+  width: 10%;
+  @include breakpoint($screen-xsml){
+    width: 3%;
+  }
+}
 .direction {
-  width: 37.5%;
+  width: 45%;
   display: flex;
   flex-direction: column;
   padding: .25em     
 }
 .rank {
-  width: 25%;
+  width: 10%;
   display: flex;
   flex-direction: column;   
 }
