@@ -9,21 +9,15 @@ export default class JpRankCard extends Component {
     }
   }
   render() {
-
     const { data } = this.props;
-    // const { key } = data;
-    console.log(data)
+    console.log('this.props', this.props)
+    console.log('data', data)
     const img = require('../../assets/rikishi-img/' + data.img + '.jpg')
-
     return (
-      <div onClick={() => data.inspect(data.key)} >
+      <div >
 
         <img src={img} alt="" />
         <div>{data.name}</div>
-        <div>{data.birthPlace}</div>
-        <div>{data.stable}</div>
-        <div>Rank: {data.rank.sumoRank("Nn # Dd")}</div>
-
       </div>
     )
 

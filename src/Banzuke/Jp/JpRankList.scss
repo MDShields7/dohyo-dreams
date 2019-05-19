@@ -19,15 +19,19 @@
   }
 }
 
-.sticky-outer {
+.sticky-nav {
   position: -webkit-sticky;
   position: sticky;
   z-index:1px;
   left: 0px;
-  top: 56px;
+  top: 55px;
   width: 100%;
   background-color: $color-brand1;
   height: 1.5em;
+}
+.nav-color {
+
+  background-color: $color-brand1;
 }
 .j-c {
   justify-content: center;
@@ -54,4 +58,10 @@
 }
 .rank-text {
   color: white;
+}
+.info-hide {
+  display: none;
+}
+.info-east, .info-west {
+  height: 100px;
 }

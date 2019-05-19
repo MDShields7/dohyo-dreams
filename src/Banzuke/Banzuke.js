@@ -21,7 +21,7 @@ export default class Banzuke extends Component {
     return (
       // <div className='container'>
       <div >
-        <h1 >
+        <h1 className='nav-color'>
           <div className='container'> Banzuke
           </div>
         </h1>

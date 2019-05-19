@@ -1,59 +1,31 @@
 import React, { Component } from 'react'
 import RankHOC from '../RankHOC'
-import JpRankCard from './JpRankCard'
+// import JpRankCard from './JpRankCard'
+import JpRankGroup from './JpRankGroup'
 import './JpRankList.scss'
 
 class JpRankList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cardType: null,
-      // ranks: ["Y", "O", "S", "K", "M"]
       banzuke: [],
-
+      selectIndex: null
     }
   }
   componentDidMount() {
     this.makeBanzuke()
   }
-  // componentDidUpdate(prevProps) {
-  //   if (this.props.data !== prevProps.data) {
-  //     this.setState()
-  //   }
+  // componentDidUpdate() {
   // }
   inspectWrestler = (key) => {
-    // let value = e.target.value;
-    // console.log(e.target)
-    // e.preventDefault();
-    console.log(this.state.banzuke[key])
-  }
-  rankGroup = (eastItem, eastKey, rankItem, westItem, westKey) => {
-    eastItem = Object.assign(eastItem, { key: eastKey, inspect: this.inspectWrestler })
-    if (westItem && westKey) {
-      westItem = Object.assign(westItem, { key: westKey, inspect: this.inspectWrestler })
-    }
-    return (
-      <>
-        <div className='container-2'>
-          <div className='row'>
-            <div className='gutter' />
-            <div className='direction'>
-              <JpRankCard data={eastItem} />
-            </div>
-            <div className='rank'>
-              {rankItem}
-            </div>
-            <div className='direction'>
-              {westItem ? <JpRankCard data={westItem} /> : <div></div>}
-            </div>
-            <div className='gutter' />
-            <div className='info-show'></div>
-          </div>
-        </div>
-      </>)
+    console.log(key)
+    // console.log(this.props.data[key])
+    this.setState({
+      selectIndex: this.props.data[key]
+    })
   }
   makeBanzuke = () => {
-    const { banzuke } = this.state
+    const { banzuke, selectIndex } = this.state
     let newBanzuke = banzuke.slice()
     if (this.props && this.props.data) {
       let { data } = this.props;
@@ -65,10 +37,10 @@ class JpRankList extends Component {
         console.log('wrestler1', w1)
         console.log('wrestler2', w2)
         if (rank1 === rank2) {
-          newBanzuke.push(this.rankGroup(w1, i, w1.rank.sumoRank("N"), w2, (i + 1)))
+          newBanzuke.push(<JpRankGroup w1={w1} w1Index={i} sIndex={selectIndex} rank={w1.rank.sumoRank("N")} w2={w2} w2Index={(i + 1)} inspect={this.inspectWrestler} />)
           i++;
         } else {
-          newBanzuke.push(this.rankGroup(w1, i, data[i].rank.sumoRank("N")))
+          newBanzuke.push(<JpRankGroup w1={w1} w1Index={i} sIndex={selectIndex} rank={w1.rank.sumoRank("N")} inspect={this.inspectWrestler} />)
         }
       }
     }
@@ -76,19 +48,12 @@ class JpRankList extends Component {
       banzuke: newBanzuke
     })
   }
-
   render() {
-    // const { data } = this.props;
     const { banzuke } = this.state;
-
-
-    console.log(banzuke)
-    // const playersArray = ( data ? data.map(elem => {
-    //   return <JpRankCard data={elem} />
-    // }) : [] );
+    // console.log(banzuke)
     return (
       <>
-        <div className='sticky-outer '>
+        <div className='sticky-nav '>
           <div className='container-2'>
             <div className='row'>
               <div className='gutter' />
@@ -106,33 +71,10 @@ class JpRankList extends Component {
           </div>
         </div>
         <div className='container-2'>
-          {/* 
-          {data ? data.map(elem => {
-            return <JpRankCard data={elem} />
-          }) : <div>"Loading"</div>}
-          */}
           {banzuke}
-
         </div >
       </>
     )
   }
 }
-
 export default RankHOC(JpRankList, 'www/dohyo-dreams.com')
-
-
-// let even = (i) => {return i === 0 || i%2 === 0}
-// loop through wrestlers
-// wrestler rank name
-//   create new rank row w/ wrestler rank name
-//     if i%2 === 0 && wrestler rank direction === east
-//     <rank group>
-//       <rank row>
-//         <east>
-//         <rank name>
-//         <west>
-//       </rank row>
-//       <info row east/>
-//       <info row west/>
-//     </rank group>
