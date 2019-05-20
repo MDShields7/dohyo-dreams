@@ -10,14 +10,12 @@ export default class JpRankCard extends Component {
   }
   render() {
     const { data } = this.props;
-    console.log('this.props', this.props)
-    console.log('data', data)
     const img = require('../../assets/rikishi-img/' + data.img + '.jpg')
     return (
       <div >
 
         <img src={img} alt="" />
-        <div>{data.name}</div>
+        <p>{data.name}</p>
       </div>
     )
 

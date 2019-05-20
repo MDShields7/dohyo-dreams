@@ -15,18 +15,21 @@ class JpRankList extends Component {
   componentDidMount() {
     this.makeBanzuke()
   }
-  // componentDidUpdate() {
-  // }
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.selectIndex !== prevState.selectIndex) {
+      this.makeBanzuke()
+    }
+  }
   inspectWrestler = (key) => {
     console.log(key)
-    // console.log(this.props.data[key])
     this.setState({
       selectIndex: this.props.data[key]
     })
   }
   makeBanzuke = () => {
+    console.log('JpRankList, selectIndex', this.state.selectIndex)
     const { banzuke, selectIndex } = this.state
-    let newBanzuke = banzuke.slice()
+    let newBanzuke = (banzuke.length ? [] : banzuke.slice())
     if (this.props && this.props.data) {
       let { data } = this.props;
       for (let i = 0; i < data.length; i++) {
@@ -34,13 +37,13 @@ class JpRankList extends Component {
         let w2 = data[i + 1] ? data[i + 1] : null;
         let rank1 = w1.rank.sumoRank("N");
         let rank2 = w2 ? w2.rank.sumoRank("N") : -1;
-        console.log('wrestler1', w1)
-        console.log('wrestler2', w2)
+        // console.log('wrestler1', w1)
+        // console.log('wrestler2', w2)
         if (rank1 === rank2) {
-          newBanzuke.push(<JpRankGroup w1={w1} w1Index={i} sIndex={selectIndex} rank={w1.rank.sumoRank("N")} w2={w2} w2Index={(i + 1)} inspect={this.inspectWrestler} />)
+          newBanzuke.push(<JpRankGroup w1={w1} w1Index={i} sIndex={selectIndex} rank={w1.rank.sumoRank("N#")} w2={w2} w2Index={(i + 1)} inspect={this.inspectWrestler} />)
           i++;
         } else {
-          newBanzuke.push(<JpRankGroup w1={w1} w1Index={i} sIndex={selectIndex} rank={w1.rank.sumoRank("N")} inspect={this.inspectWrestler} />)
+          newBanzuke.push(<JpRankGroup w1={w1} w1Index={i} sIndex={selectIndex} rank={w1.rank.sumoRank("N#")} inspect={this.inspectWrestler} />)
         }
       }
     }
@@ -50,7 +53,7 @@ class JpRankList extends Component {
   }
   render() {
     const { banzuke } = this.state;
-    // console.log(banzuke)
+    console.log('JpRankList this.state', this.state)
     return (
       <>
         <div className='sticky-nav '>

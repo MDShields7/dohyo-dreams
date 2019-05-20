@@ -18,7 +18,12 @@
     
   }
 }
-
+.group-row{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+}
 .sticky-nav {
   position: -webkit-sticky;
   position: sticky;
@@ -62,6 +67,8 @@
 .info-hide {
   display: none;
 }
-.info-east, .info-west {
-  height: 100px;
+.info-show {
+  display:initial;
+  width:100%;
+  height: 50px;
 }
