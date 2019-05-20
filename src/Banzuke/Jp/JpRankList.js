@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import RankHOC from '../RankHOC'
-// import JpRankCard from './JpRankCard'
 import JpRankGroup from './JpRankGroup'
 import './JpRankList.scss'
 
@@ -37,8 +36,6 @@ class JpRankList extends Component {
         let w2 = data[i + 1] ? data[i + 1] : null;
         let rank1 = w1.rank.sumoRank("N");
         let rank2 = w2 ? w2.rank.sumoRank("N") : -1;
-        // console.log('wrestler1', w1)
-        // console.log('wrestler2', w2)
         if (rank1 === rank2) {
           newBanzuke.push(<JpRankGroup w1={w1} w1Index={i} sIndex={selectIndex} rank={w1.rank.sumoRank("N#")} w2={w2} w2Index={(i + 1)} inspect={this.inspectWrestler} />)
           i++;

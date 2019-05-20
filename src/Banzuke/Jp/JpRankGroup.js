@@ -30,17 +30,20 @@ export default class JpRankGroup extends Component {
   }
   loadInfo = (clicked) => {
     const { w1, w2, w1Index, w2Index } = this.state;
-    let data;
-    if (clicked.name === w1.name) {
-      data = w1;
-    } else if (w2 && clicked.name === w2.name) {
-      data = w2;
-    }
-    if (data) {
-      return (<div className='direction'>
-        <div>Birth Place: {data.birthPlace}</div>
-        <div>Stable: {data.stable}</div>
-      </div>)
+    if (w1) {
+      return (<>
+        <div className='direction'>
+          <div>{w1.birthPlace}</div>
+          <div>{w1.stable}</div>
+        </div>
+        <p className='rank'></p>
+        <div className='direction'>
+          {w2 ? <>
+            <div>{w2.birthPlace}</div>
+            <div>{w2.stable}</div>
+          </> : <div />}
+        </div>
+      </>)
     }
   }
   render() {
@@ -65,8 +68,8 @@ export default class JpRankGroup extends Component {
             {w2 && w2Index ? <JpRankCard data={w2} inspect={this.props.inspect} /> : <div></div>}
           </div>
         </div>
-        <div className='row'>
-          <div className={sIndex === w1 || sIndex === w2 ? 'info-show' : 'info-hide'} >
+        <div className={sIndex === w1 || sIndex === w2 ? 'info-show' : 'info-hide'} >
+          <div className='row'>
             {sIndex === w1 || sIndex === w2 ? this.loadInfo(sIndex) : <div />}
           </div>
         </div>
