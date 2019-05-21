@@ -6,7 +6,7 @@ nav {
   position: -webkit-sticky;
   position: sticky;
   background-color: white;
-  z-index:1px;
+  // z-index:1px;
 }
 
 ul {
@@ -42,12 +42,12 @@ section {
     height: $menu-height;
     width: 100%;
     transform: translate(0px, $menu-height);
-    z-index: 3;
+    z-index: 5;
     transition: .3s ease-in-out;
     li {
       height: $menu-height/3;
       width: 100%;
-      z-index: 3;
+      z-index: 5;
       display: flex;
       flex-direction: column;
       align-content: space-around
@@ -62,7 +62,7 @@ nav .show {
 nav .show-2 {
   @include breakpoint($screen-xsml){
     display: initial;
-    z-index: 2;
+    z-index: 5;
     position: fixed;
     top: 0px;
     left: 0px;

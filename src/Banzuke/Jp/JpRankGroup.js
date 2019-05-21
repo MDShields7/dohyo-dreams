@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import _ from 'lodash';
+// import _ from 'lodash';
 import JpRankCard from './JpRankCard'
 import './JpRankList.scss'
 
@@ -29,18 +29,18 @@ export default class JpRankGroup extends Component {
     }
   }
   loadInfo = (clicked) => {
-    const { w1, w2, w1Index, w2Index } = this.state;
+    const { w1, w2, } = this.state;
     if (w1) {
       return (<>
         <div className='direction'>
-          <div>{w1.birthPlace}</div>
-          <div>{w1.stable}</div>
+          <div className='text-xs'>{w1.birthPlace}</div>
+          <div className='text-xs'>{w1.stable}</div>
         </div>
-        <p className='rank'></p>
+        <p className='rank text-s'></p>
         <div className='direction'>
           {w2 ? <>
-            <div>{w2.birthPlace}</div>
-            <div>{w2.stable}</div>
+            <div className='text-xs'>{w2.birthPlace}</div>
+            <div className='text-xs'>{w2.stable}</div>
           </> : <div />}
         </div>
       </>)
@@ -61,9 +61,11 @@ export default class JpRankGroup extends Component {
           <div className='direction' onClick={() => inspect(w1Index)}>
             <JpRankCard data={w1} inspect={this.props.inspect} />
           </div>
-          <p className='rank'>
-            {rank}
-          </p>
+          <div className='rank'>
+            <div className='margin'>
+              {rank}
+            </div>
+          </div>
           <div className='direction' onClick={() => inspect(w2Index)}>
             {w2 && w2Index ? <JpRankCard data={w2} inspect={this.props.inspect} /> : <div></div>}
           </div>

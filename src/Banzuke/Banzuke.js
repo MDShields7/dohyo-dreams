@@ -22,7 +22,7 @@ export default class Banzuke extends Component {
       // <div className='container'>
       <div >
         <h1 className='nav-color'>
-          <div className='container'> Banzuke
+          <div className='container-2 text-white'> Banzuke
           </div>
         </h1>
         {listType[typeNum]}
