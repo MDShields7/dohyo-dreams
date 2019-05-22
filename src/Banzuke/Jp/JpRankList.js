@@ -73,13 +73,13 @@ class JpRankList extends Component {
           <div className='container-2'>
             <div className='row'>
               <div className='direction'>
-                <div className='margin text-white'>East</div>
+                <div className='text-white'>East</div>
               </div>
               <div className='rank'>
                 <div className='margin text-white'>Rank</div>
               </div>
               <div className='direction'>
-                <div className='margin text-white'>West</div>
+                <div className='text-white'>West</div>
               </div>
             </div>
           </div>

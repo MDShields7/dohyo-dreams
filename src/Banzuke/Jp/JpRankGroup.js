@@ -33,14 +33,18 @@ export default class JpRankGroup extends Component {
     if (w1) {
       return (<>
         <div className='direction'>
-          <div className='text-xs'>{w1.birthPlace}</div>
-          <div className='text-xs'>{w1.stable}</div>
+          <p className='text-xxs'>Place of Birth:</p>
+          <p className='text-xs-b'>{w1.birthPlace}</p>
+          <p className='text-xxs'>Stable:</p>
+          <p className='text-xs-b'>{w1.stable}</p>
         </div>
         <p className='rank text-s'></p>
         <div className='direction'>
           {w2 ? <>
-            <div className='text-xs'>{w2.birthPlace}</div>
-            <div className='text-xs'>{w2.stable}</div>
+            <p className='text-xxs'>Place of Birth:</p>
+            <p className='text-xs-b'>{w2.birthPlace}</p>
+            <p className='text-xxs'>Stable:</p>
+            <p className='text-xs-b'>{w2.stable}</p>
           </> : <div />}
         </div>
       </>)

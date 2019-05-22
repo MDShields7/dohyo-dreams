@@ -77,11 +77,19 @@
 .info-show {
   display:initial;
   width:100%;
-  height: 50px;
+  height: auto;
 }
+
 .text-s {
   font-size: 14px
 }
 .text-xs {
-  font-size: 12px
+  font-size: 12px;
+}
+.text-xs-b {
+  font-size: 12px;
+  font-weight: bold;
+}
+.text-xxs {
+  font-size: 11px
 }
