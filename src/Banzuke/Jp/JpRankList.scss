@@ -1,6 +1,11 @@
 @import '../../breakpoints.scss';
 @import '../../variables.scss';
 
+$mawashi: red;
+$mawashi: rgb(255, 134, 134);
+$mawashi: rgb(99, 50, 50);
+$mawashi: rgb(255, 134, 134);
+
 .container-2 {
   margin: auto;
   width: 80%;
@@ -57,13 +62,30 @@
   width: 42%;
   display: flex;
   flex-direction: column;
-  padding: .25em 0em;  
+  padding-top: .25em;  
+}
+.direction-2 {
+  width: 42%;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+  padding-bottom: .25em;  
 }
 .rank {
   width: 16%;
   display: flex;
   flex-direction: column;
-  padding: .25em 0em;  
+  padding: .25em 0em;
+}
+.rank-content {
+  width: 16%;
+  display: flex;
+  flex-direction: column;
+  padding: .25em 0em;
+  background: rgb(240, 240, 240);
+  border-left: 3px solid white;
+  border-right: 3px solid white;
+  // border-radius: 10px;
 }
 .margin {
   margin: auto;
@@ -79,17 +101,32 @@
   width:100%;
   height: auto;
 }
-
+@mixin text{
+  margin-bottom: .5em;
+}
+@mixin text-10 { font-size:  10px; }
+@mixin text-11 { font-size:  11px; }
+@mixin text-12 { font-size:  12px; }
+@mixin text-13 { font-size:  13px; }
+@mixin text-14 { font-size:  14px; }
 .text-s {
+  // @include text;
   font-size: 14px
 }
 .text-xs {
-  font-size: 12px;
+  // @include text;
+  @include text-12;
 }
 .text-xs-b {
-  font-size: 12px;
+  // @include text;
+  @include text-12;
   font-weight: bold;
 }
 .text-xxs {
-  font-size: 11px
+  // @include text;
+  font-size: 10px
+}
+.mawashi {
+  width: 28px;
+  height: 7px;
 }

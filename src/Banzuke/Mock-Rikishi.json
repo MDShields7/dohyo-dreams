@@ -3,6 +3,7 @@
     "name": "Hakuho",
     "birthPlace": "Mongolia",
     "stable": "Miyagano",
+    "mawashi": "#2B1200",
     "rank": "Y1E",
     "img": 1
   },
@@ -10,6 +11,7 @@
     "name": "Kakuryu",
     "birthPlace": "Mongolia",
     "stable": "Izutsu",
+    "mawashi": "#020036",
     "rank": "Y1W",
     "img": 2
   },
@@ -17,6 +19,7 @@
     "name": "Goeido",
     "birthPlace": "Osaka",
     "stable": "Sakaigawa",
+    "mawashi": "black",
     "rank": "O1E",
     "img": 3
   },
@@ -24,6 +27,7 @@
     "name": "Takayasu",
     "birthPlace": "Ibaraki",
     "stable": "Tagonoura",
+    "mawashi": "black",
     "rank": "O1W",
     "img": 4
   },
@@ -31,6 +35,7 @@
     "name": "Takakeisho",
     "birthPlace": "Hyogo",
     "stable": "Chiganoura",
+    "mawashi": "darkslateblue",
     "rank": "O2E",
     "img": 5
   },
@@ -38,6 +43,7 @@
     "name": "Ichinojo",
     "birthPlace": "Mongolia",
     "stable": "Minato",
+    "mawashi": "dodgerblue",
     "rank": "S1E",
     "img": 6
   },
@@ -45,6 +51,7 @@
     "name": "Tochinoshin",
     "birthPlace": "Georgia",
     "stable": "Kasugano",
+    "mawashi": "indigo",
     "rank": "S1W",
     "img": 7
   },
@@ -52,6 +59,7 @@
     "name": "Aoiyama",
     "birthPlace": "Bulgaria",
     "stable": "Kasugano",
+    "mawashi": "cornflowerblue",
     "rank": "K1E",
     "img": 8
   },
@@ -59,6 +67,7 @@
     "name": "Mitakeumi",
     "birthPlace": "Nagano",
     "stable": "Dewanoumi",
+    "mawashi": "#B94E00",
     "rank": "K1W",
     "img": 9
   },
@@ -66,6 +75,7 @@
     "name": "Hokutofuji",
     "birthPlace": "Saitama",
     "stable": "Hakkaku",
+    "mawashi": "navy",
     "rank": "M1E",
     "img": 10
   },
@@ -73,6 +83,7 @@
     "name": "Kotoshogiku",
     "birthPlace": "Fukuoka",
     "stable": "Sadogatake",
+    "mawashi": "darkblue",
     "rank": "M1W",
     "img": 11
   },
@@ -80,6 +91,7 @@
     "name": "Endo",
     "birthPlace": "Ishikawa",
     "stable": "Oitekaze",
+    "mawashi": "gold",
     "rank": "M2E",
     "img": 12
   },
@@ -87,6 +99,7 @@
     "name": "Daieisho",
     "birthPlace": "Saitama",
     "stable": "Oitekaze",
+    "mawashi": "firebrick",
     "rank": "M2W",
     "img": 13
   },
@@ -94,6 +107,7 @@
     "name": "Chiyotairyu",
     "birthPlace": "Tokyo",
     "stable": "Kokonoe",
+    "mawashi": "lightcoral",
     "rank": "M3E",
     "img": 14
   },
@@ -101,6 +115,7 @@
     "name": "Tamawashi",
     "birthPlace": "Mongolia",
     "stable": "Kataonami",
+    "mawashi": "rgb(0,0,0)",
     "rank": "M3W",
     "img": 15
   },
@@ -108,6 +123,7 @@
     "name": "Okinoumi",
     "birthPlace": "Shimane",
     "stable": "Hakkaku",
+    "mawashi": "black",
     "rank": "M4E",
     "img": 16
   },
@@ -115,6 +131,7 @@
     "name": "Abi",
     "birthPlace": "Saitama",
     "stable": "Shikoroyama",
+    "mawashi": "#B20015",
     "rank": "M4W",
     "img": 17
   },
@@ -122,6 +139,7 @@
     "name": "Myogiryu",
     "birthPlace": "Hyogo",
     "stable": "Sakaigawa",
+    "mawashi": "rgb(0,0,0)",
     "rank": "M5E",
     "img": 18
   },
@@ -129,6 +147,7 @@
     "name": "Ryuden",
     "birthPlace": "Yamanashi",
     "stable": "Takadagawa",
+    "mawashi": "rgb(0,0,0)",
     "rank": "M5W",
     "img": 19
   },
@@ -136,6 +155,7 @@
     "name": "Takarafuji",
     "birthPlace": "Aomori",
     "stable": "Isegahama",
+    "mawashi": "rgb(0,0,0)",
     "rank": "M6E",
     "img": 20
   },
@@ -143,6 +163,7 @@
     "name": "Yoshikaze",
     "birthPlace": "Oita",
     "stable": "Oguruma",
+    "mawashi": "rgb(0,0,0)",
     "rank": "M6W",
     "img": 21
   },
@@ -150,6 +171,7 @@
     "name": "Shodai",
     "birthPlace": "Kumamoto",
     "stable": "Tokitsukaze",
+    "mawashi": "rgb(0,0,0)",
     "rank": "M7E",
     "img": 22
   },
@@ -157,7 +179,56 @@
     "name": "Meisei",
     "birthPlace": "Kagoshima",
     "stable": "Tatsunami",
+    "mawashi": "",
     "rank": "M7W",
     "img": 22
+  },
+  {
+    "name": "Shimanoumi",
+    "birthPlace": "Mie",
+    "stable": "Kise",
+    "mawashi": "tan",
+    "rank": "M12E",
+    "img": 100
+  },
+  {
+    "name": "Chiyomaru",
+    "birthPlace": "Kagoshima",
+    "stable": "Kokonoe",
+    "mawashi": "limegreen",
+    "rank": "M13E",
+    "img": 100
+  },
+  {
+    "name": "Sadanoumi",
+    "birthPlace": "Kumamoto",
+    "stable": "Sakaigawa",
+    "mawashi": "darkgreen",
+    "rank": "M13W",
+    "img": 100
+  },
+  {
+    "name": "Terutsuyoshi",
+    "birthPlace": "Hyogo",
+    "stable": "Isegahama",
+    "mawashi": "#182880",
+    "rank": "M15E",
+    "img": 100
+  },
+  {
+    "name": "Daishoho",
+    "birthPlace": "Mongolia",
+    "stable": "Oitekaze",
+    "mawashi": "purple",
+    "rank": "M16E",
+    "img": 100
+  },
+  {
+    "name": "Ishiura",
+    "birthPlace": "Tottori",
+    "stable": "Miyagano",
+    "mawashi": "gold",
+    "rank": "M16W",
+    "img": 100
   }
 ]

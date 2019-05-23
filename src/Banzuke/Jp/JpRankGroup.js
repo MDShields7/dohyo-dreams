@@ -32,14 +32,14 @@ export default class JpRankGroup extends Component {
     const { w1, w2, } = this.state;
     if (w1) {
       return (<>
-        <div className='direction'>
+        <div className='direction-2'>
           <p className='text-xxs'>Place of Birth:</p>
           <p className='text-xs-b'>{w1.birthPlace}</p>
           <p className='text-xxs'>Stable:</p>
           <p className='text-xs-b'>{w1.stable}</p>
         </div>
-        <p className='rank text-s'></p>
-        <div className='direction'>
+        <p className='rank-content text-s'></p>
+        <div className='direction-2'>
           {w2 ? <>
             <p className='text-xxs'>Place of Birth:</p>
             <p className='text-xs-b'>{w2.birthPlace}</p>
@@ -65,7 +65,7 @@ export default class JpRankGroup extends Component {
           <div className='direction' onClick={() => inspect(w1Index)}>
             <JpRankCard data={w1} inspect={this.props.inspect} />
           </div>
-          <div className='rank'>
+          <div className='rank-content'>
             <div className='margin'>
               {rank}
             </div>

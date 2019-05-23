@@ -48,22 +48,26 @@ body {
 }
 h1 {
   font-size: 2rem;
-  margin-top: 1.5rem;
+  // margin-top: 1.5rem;
 }
 h2 {
   font-size: 1.75rem;
-  margin-top: 1.5rem;
+  // margin-top: 1.5rem;
 }
 h3 {
   font-size: 1.5rem;
-  margin-top: 1.5rem;
+  // margin-top: 1.5rem;
 }
 h4 {
   font-size: 1.25rem;
-  margin-top: 1.25rem;
+  // margin-top: 1.25rem;
 }
 p {
   // margin-top: .25rem;  
-  margin-bottom: .25em;
+  // margin-bottom: .25em;
   font-size: 1rem;
+}
+
+.pt-05 {
+  padding-top: .5em;
 }
