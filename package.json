@@ -2,13 +2,16 @@
   "name": "dohyo-dreams",
   "version": "0.1.0",
   "private": true,
+  "main": "./server/server.ts",
   "dependencies": {
     "axios": "^0.18.0",
+    "bcrypt": "^3.0.6",
     "body-parser": "^1.18.3",
     "breakpoint-sass": "^2.7.1",
     "chroma-js": "^2.0.3",
+    "class-validator": "^0.9.1",
     "dotenv": "^7.0.0",
-    "express": "^4.16.4",
+    "express": "^4.17.1",
     "express-session": "^1.16.1",
     "http-server": "^0.11.1",
     "lodash": "^4.17.11",
@@ -19,14 +22,26 @@
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
-    "sumo-rank": "^1.0.2"
+    "sumo-rank": "^1.0.2",
+    "typeorm": "^0.2.17"
+  },
+  "devDependencies": {
+    "@types/express": "^4.16.1",
+    "@types/node": "^10.12.11",
+    "nodemon": "^1.18.7",
+    "ts-node": "^8.2.0",
+    "tslint": "^5.11.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "typescript": "^3.5.1"
   },
   "scripts": {
+    "dev": "ts-node ./server/server.ts",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start-sw": "express ./build"
+    "start-sw": "express ./build",
+    "lint": "tslint -p tsconfig.json -c tslint.json"
   },
   "eslintConfig": {
     "extends": "react-app"

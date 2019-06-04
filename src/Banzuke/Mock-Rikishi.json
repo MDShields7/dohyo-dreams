@@ -211,7 +211,7 @@
     "name": "Terutsuyoshi",
     "birthPlace": "Hyogo",
     "stable": "Isegahama",
-    "mawashi": "#182880",
+    "mawashi": "#202F81",
     "rank": "M15E",
     "img": 100
   },
@@ -219,7 +219,7 @@
     "name": "Daishoho",
     "birthPlace": "Mongolia",
     "stable": "Oitekaze",
-    "mawashi": "purple",
+    "mawashi": "#180058",
     "rank": "M16E",
     "img": 100
   },
@@ -227,7 +227,7 @@
     "name": "Ishiura",
     "birthPlace": "Tottori",
     "stable": "Miyagano",
-    "mawashi": "gold",
+    "mawashi": "#DDBE15",
     "rank": "M16W",
     "img": 100
   }
