@@ -1,9 +1,4 @@
-enum locale {
-  Tokyo = 1,
-  Osaka,
-  Nagoya,
-  Fukuoka,
-}
+import locale from "./basho.locale.enum";
 
 interface Basho {
   name: string;
