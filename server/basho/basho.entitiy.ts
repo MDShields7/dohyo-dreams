@@ -1,4 +1,4 @@
-import { PrimaryGeneratedColumn, Column } from "typeorm";
+import { PrimaryGeneratedColumn, Column, OneToOne } from "typeorm";
 import locale from "./basho.locale.enum";
 
 class Basho {
@@ -22,5 +22,7 @@ class Basho {
 
   @Column()
   public location: locale;
+
+  @OneToMany(() => Rankings, (rankings: Rankings) => rankings.banzuke)
 
 }
