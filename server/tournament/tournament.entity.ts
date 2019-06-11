@@ -1,7 +1,7 @@
 import { PrimaryGeneratedColumn, Column, OneToOne } from "typeorm";
-import locale from "./basho.locale.enum";
+import locale from "./tournament.locale.enum";
 
-class Basho {
+class Tournament {
   @PrimaryGeneratedColumn()
   public id: number;
 
@@ -23,6 +23,8 @@ class Basho {
   @Column()
   public location: locale;
 
-  @OneToMany(() => Rankings, (rankings: Rankings) => rankings.banzuke)
-
+  @OneToMany(() => Rankings, (rankings: Rankings) => rankings.tournament)
+  public rankings: Rankings[];
 }
+
+export default Tournament;

@@ -8,10 +8,11 @@ class Rankings {
   @Column()
   public rank: string;
 
-  @ManyToOne(() => Basho, (banzuke: Basho){ = })
+  @ManyToOne(() => tournaments, (tournament: Tournaments) => tournament.rankings)
+  public tournament: Tournaments;
 
-  @Column()
-  public wrestler: 
+  @ManyToOne(() => Wrestlers, (wrestler: Wrestlers) => wrestler.rankings)
+  public wrestler: Wrestlers;
 }
 
 export default Rankings;
