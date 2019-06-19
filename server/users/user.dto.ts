@@ -10,6 +10,6 @@ class CreateUserDto {
   @IsString()
   public password: string;
 
-  @IsString()
+  @IsBoolean()
   public admin: boolean;
 }

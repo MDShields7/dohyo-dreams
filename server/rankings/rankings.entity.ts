@@ -1,6 +1,6 @@
-import { PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm";
+import { PrimaryGeneratedColumn, Column, ManyToOne, Entity } from "typeorm";
 
-
+@Entity()
 class Rankings {
   @PrimaryGeneratedColumn()
   public id: number;

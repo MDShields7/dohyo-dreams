@@ -1,6 +1,7 @@
-import { PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
+import { PrimaryGeneratedColumn, Column, OneToMany, Entity } from "typeorm";
 import Rankings from "../rankings/rankings.entity";
 
+@Entity()
 class Wrestlers {
   @PrimaryGeneratedColumn()
   public id: number;

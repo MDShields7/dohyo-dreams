@@ -1,3 +1,4 @@
+import { IsString, IsNumber, IsBoolean } from "class-validator";
 
 
 class CreateWrestlersDto {
@@ -11,5 +12,19 @@ class CreateWrestlersDto {
   public ringName: string;
 
   @IsString()
-  public birthDate: Date;
+  public birthDate: string;
+
+  @IsString()
+  public birthPlace: string;
+
+  @IsNumber()
+  public height: number;
+
+  @IsNumber()
+  public weight: number;
+
+  @IsBoolean()
+  public retired: boolean;
 }
+
+export default CreateWrestlersDto;

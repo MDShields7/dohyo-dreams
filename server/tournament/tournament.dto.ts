@@ -1,21 +1,22 @@
 import { IsOptional, IsString, ValidateNested } from 'class-validator';
-import CreateAddressDto from '../rankings/rankings.dto.ts';
+import locale from './tournament.locale.enum';
+import CreateRankingsDto from '../rankings/rankings.dto';
 
 class CreateTournamentDto {
   @IsString()
   public name: string;
 
   @IsString()
-  public year: Date;
+  public year: string;
 
   @IsString()
-  public dateStart: Date;
+  public dateStart: string;
 
   @IsString()
-  public dateEnd: Date;
+  public dateEnd: string;
 
   @IsString()
-  public cancelled: Date;
+  public cancelled: string;
 
   @IsString()
   public location: locale;
