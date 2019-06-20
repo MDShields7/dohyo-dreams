@@ -23,6 +23,9 @@ class CreateWrestlersDto {
   @IsNumber()
   public weight: number;
 
+  @IsString()
+  public mawashi: string;
+
   @IsBoolean()
   public retired: boolean;
 }

@@ -5,8 +5,8 @@ class CreateRankingsDto {
   @IsString()
   public rank: string;
 
-  @IsString()
-  public tournament: string;
+  @ValidateNested()
+  public tournament?: CreateTournamentsDto;
 
   @ValidateNested()
   public wrestler?: CreateWrestlersDto;

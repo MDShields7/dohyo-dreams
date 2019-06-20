@@ -16,7 +16,7 @@ class Wrestlers {
   public ringName: string;
 
   @Column()
-  public birthDate: Date;
+  public birthDate: string;
 
   @Column()
   public birthPlace: string;
@@ -29,6 +29,9 @@ class Wrestlers {
 
   @Column()
   public retired: boolean;
+
+  @Column()
+  public mawashi: string;
 
   @OneToMany(() => Rankings, (rankings: Rankings) => rankings.wrestler)
   public rankings: Rankings[];

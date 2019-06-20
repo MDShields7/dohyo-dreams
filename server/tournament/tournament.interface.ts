@@ -2,12 +2,11 @@ import locale from "./tournament.locale.enum";
 
 interface Tournament {
   name: string;
-  year: Date;
-  dateStart: Date;
-  dateEnd: Date;
+  year: string;
+  dateStart: string;
+  dateEnd: string;
   cancelled: boolean;
   location: locale;
-  tournament: Rankings[];
 }
 
 export default Tournament;
