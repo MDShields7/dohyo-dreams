@@ -1,8 +1,9 @@
-import { PrimaryGeneratedColumn, Column, OneToOne, Entity } from "typeorm";
-import locale from "./tournament.locale.enum";
+import { PrimaryGeneratedColumn, Column, OneToOne, OneToMany, Entity } from "typeorm";
+import Rankings from '../rankings/rankings.entity';
+import locale from "./tournaments.locale.enum";
 
 @Entity()
-class Tournament {
+class Tournaments {
   @PrimaryGeneratedColumn()
   public id: number;
 
@@ -10,13 +11,10 @@ class Tournament {
   public name: string;
 
   @Column()
-  public year: Date;
+  public dateStart: string;
 
   @Column()
-  public dateStart: Date;
-
-  @Column()
-  public dateEnd: Date;
+  public dateEnd: string;
 
   @Column()
   public cancelled: boolean;
@@ -31,4 +29,4 @@ class Tournament {
   public rankings: Rankings[];
 }
 
-export default Tournament;
+export default Tournaments;

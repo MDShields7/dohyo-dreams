@@ -4,10 +4,14 @@
     "target": "es2017",
     "outDir": "./dist",
     "baseUrl": "./src",
-    "experimentalDecorators": true
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   },
   "include": [
-    "./server.ts"
+    "server/**/*.ts"
   ],
   "exclude": [
     "node_modules"

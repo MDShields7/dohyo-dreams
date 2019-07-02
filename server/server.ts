@@ -1,16 +1,27 @@
-import * as express from 'express';
+import 'dotenv/config';
+import 'reflect-metadata';
+import { createConnection } from 'typeorm';
+import App from './app';
+import config from './ormconfig';
+// import PostController from './post/post.controller';
+import validateEnv from './utils/validateEnv';
 
-function loggerMiddleware(request: express.Request, response: express.Response, next) {
-  console.log(`${request.method} ${request.path}`);
-  next();
-}
+validateEnv();
 
-const app = express();
-
-app.use(loggerMiddleware)
-
-app.get('/', (request, response) => {
-  response.send('Hello World')
-});
-
-app.listen(5000);
+(async () => {
+  try {
+    await createConnection(config);
+  } catch (error) {
+    console.log('Error while connecting to the database', error);
+    return error;
+  }
+  const app = new App(
+    [
+      new PostController(),
+    ],
+    // [
+    //   new VersionController(),
+    // ],
+  );
+  app.listen();
+})();

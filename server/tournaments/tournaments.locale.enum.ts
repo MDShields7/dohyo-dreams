@@ -1,3 +1,4 @@
+
 enum locale {
   Tokyo = 1,
   Osaka,

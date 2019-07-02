@@ -1,14 +1,13 @@
-import { IsOptional, IsString, ValidateNested } from 'class-validator';
-import CreateAddressDto from '../wrestlers/wrestlers.dto';
+import { IsString } from 'class-validator';
 
 class CreateRankingsDto {
   @IsString()
   public rank: string;
 
-  @ValidateNested()
-  public tournament?: CreateTournamentsDto;
+  @IsString()
+  public tournament: string;
 
-  @ValidateNested()
-  public wrestler?: CreateWrestlersDto;
+  @IsString()
+  public wrestler: string;
 }
 export default CreateRankingsDto;

@@ -1,4 +1,6 @@
 import { PrimaryGeneratedColumn, Column, ManyToOne, Entity } from "typeorm";
+import Tournaments from "../tournaments/tournaments.entity";
+import Wrestlers from '../wrestlers/wrestlers.entity';
 
 @Entity()
 class Rankings {
@@ -8,7 +10,7 @@ class Rankings {
   @Column()
   public rank: string;
 
-  @ManyToOne(() => tournaments, (tournament: Tournaments) => tournament.rankings)
+  @ManyToOne(() => Tournaments, (tournament: Tournaments) => tournament.rankings)
   public tournament: Tournaments;
 
   @ManyToOne(() => Wrestlers, (wrestler: Wrestlers) => wrestler.rankings)

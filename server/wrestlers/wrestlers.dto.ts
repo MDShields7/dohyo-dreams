@@ -1,4 +1,4 @@
-import { IsString, IsNumber, IsBoolean } from "class-validator";
+import { IsBoolean, IsHexColor, IsISO8601, IsNumber, IsString, } from "class-validator";
 
 
 class CreateWrestlersDto {
@@ -11,7 +11,7 @@ class CreateWrestlersDto {
   @IsString()
   public ringName: string;
 
-  @IsString()
+  @IsISO8601()
   public birthDate: string;
 
   @IsString()
@@ -23,11 +23,11 @@ class CreateWrestlersDto {
   @IsNumber()
   public weight: number;
 
-  @IsString()
-  public mawashi: string;
-
   @IsBoolean()
   public retired: boolean;
+
+  @IsHexColor()
+  public mawashi: string;
 }
 
 export default CreateWrestlersDto;

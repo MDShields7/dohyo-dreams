@@ -33,7 +33,7 @@ class Wrestlers {
   @Column()
   public mawashi: string;
 
-  @OneToMany(() => Rankings, (rankings: Rankings) => rankings.wrestler)
+  @OneToMany(() => Rankings, (ranking: Rankings) => ranking.wrestler)
   public rankings: Rankings[];
 }
 
