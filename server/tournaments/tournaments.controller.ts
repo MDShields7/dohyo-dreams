@@ -62,4 +62,4 @@ class TournamentsController {
     }
   }
 }
-export default TournamentController;
+export default TournamentsController;

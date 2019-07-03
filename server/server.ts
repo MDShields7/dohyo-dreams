@@ -5,6 +5,10 @@ import App from './app';
 import config from './ormconfig';
 // import PostController from './post/post.controller';
 import validateEnv from './utils/validateEnv';
+import UsersController from './users/users.controller'
+import TournamentsController from './tournaments/tournaments.controller'
+import WrestlersController from './wrestlers/wrestlers.controller'
+import RankingsController from './rankings/rankings.controller'
 
 validateEnv();
 
@@ -17,7 +21,10 @@ validateEnv();
   }
   const app = new App(
     [
-      new PostController(),
+      new UsersController(),
+      new TournamentsController(),
+      new WrestlersController(),
+      new RankingsController(),
     ],
     // [
     //   new VersionController(),
