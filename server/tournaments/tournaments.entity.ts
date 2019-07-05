@@ -1,6 +1,6 @@
-import { PrimaryGeneratedColumn, Column, OneToOne, OneToMany, Entity } from "typeorm";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import Rankings from '../rankings/rankings.entity';
-import locale from "./tournaments.locale.enum";
+import locale from './tournaments.locale.enum';
 
 @Entity()
 class Tournaments {
@@ -20,8 +20,8 @@ class Tournaments {
   public cancelled: boolean;
 
   @Column({
-    type: "enum",
-    enum: "locale"
+    type: 'enum',
+    enum: 'locale',
   })
   public location: locale;
 

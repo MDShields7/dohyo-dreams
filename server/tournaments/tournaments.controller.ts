@@ -1,13 +1,13 @@
 import * as express from 'express';
-import Tournaments from './tournaments.entity';
 import { getRepository } from 'typeorm';
-import ValidationMiddleware from '../middleware/validation.mid';
+import validationMiddleware from '../middleware/validation.mid';
 import CreateTournamentsDto from './tournaments.dto';
+import Tournaments from './tournaments.entity';
 
 class TournamentsController {
   public path = '/tournaments';
   public router = express.Router();
-  private tournamentsRepository = getRepository(Tournaments)
+  private tournamentsRepository = getRepository(Tournaments);
 
   constructor() {
     this.initializeRoutes();
@@ -18,8 +18,8 @@ class TournamentsController {
     this.router.get(`${this.path}/:id`, this.getTournamentById);
     this.router
       .all(`${this.path}/*`)
-      .post(this.path, ValidationMiddleware(CreateTournamentsDto), this.createTournament)
-      .put(`${this.path}/:id`, ValidationMiddleware(CreateTournamentsDto), this.modifyTournament)
+      .post(this.path, validationMiddleware(CreateTournamentsDto), this.createTournament)
+      .put(`${this.path}/:id`, validationMiddleware(CreateTournamentsDto), this.modifyTournament)
       .delete(`${this.path}/id`, this.deleteTournament);
   }
   private getAllTournaments = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
@@ -32,7 +32,7 @@ class TournamentsController {
     if (tournaments) {
       response.send(tournaments);
     } else {
-      next()
+      next();
     }
   }
   private createTournament = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
@@ -41,7 +41,7 @@ class TournamentsController {
     if (createResponse) {
       response.send(createResponse);
     } else {
-      next()
+      next();
     }
   }
   private modifyTournament = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
@@ -51,7 +51,7 @@ class TournamentsController {
     if (updateResponse) {
       response.send(updateResponse);
     } else {
-      next()
+      next();
     }
   }
   private deleteTournament = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
@@ -62,4 +62,5 @@ class TournamentsController {
     }
   }
 }
+
 export default TournamentsController;

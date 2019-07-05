@@ -1,5 +1,5 @@
-import { PrimaryGeneratedColumn, Column, OneToMany, Entity } from "typeorm";
-import Rankings from "../rankings/rankings.entity";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import Rankings from '../rankings/rankings.entity';
 
 @Entity()
 class Wrestlers {

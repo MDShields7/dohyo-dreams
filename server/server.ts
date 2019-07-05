@@ -3,12 +3,11 @@ import 'reflect-metadata';
 import { createConnection } from 'typeorm';
 import App from './app';
 import config from './ormconfig';
-// import PostController from './post/post.controller';
+import RankingsController from './rankings/rankings.controller';
+import TournamentsController from './tournaments/tournaments.controller';
+import UsersController from './users/users.controller';
 import validateEnv from './utils/validateEnv';
-import UsersController from './users/users.controller'
-import TournamentsController from './tournaments/tournaments.controller'
-import WrestlersController from './wrestlers/wrestlers.controller'
-import RankingsController from './rankings/rankings.controller'
+import WrestlersController from './wrestlers/wrestlers.controller';
 
 validateEnv();
 

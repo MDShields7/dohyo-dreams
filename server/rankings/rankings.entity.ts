@@ -1,5 +1,5 @@
-import { PrimaryGeneratedColumn, Column, ManyToOne, Entity } from "typeorm";
-import Tournaments from "../tournaments/tournaments.entity";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import Tournaments from '../tournaments/tournaments.entity';
 import Wrestlers from '../wrestlers/wrestlers.entity';
 
 @Entity()

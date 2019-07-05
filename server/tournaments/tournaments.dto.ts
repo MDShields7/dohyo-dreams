@@ -1,6 +1,5 @@
-import { IsOptional, IsString, ValidateNested, IsBoolean } from 'class-validator';
+import { IsBoolean, IsString } from 'class-validator';
 import locale from './tournaments.locale.enum';
-import CreateRankingsDto from '../rankings/rankings.dto';
 
 class CreateTournamentsDto {
   @IsString()

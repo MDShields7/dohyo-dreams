@@ -1,5 +1,4 @@
-import { IsBoolean, IsHexColor, IsISO8601, IsNumber, IsString, } from "class-validator";
-
+import { IsBoolean, IsHexColor, IsISO8601, IsNumber, IsString } from 'class-validator';
 
 class CreateWrestlersDto {
   @IsString()

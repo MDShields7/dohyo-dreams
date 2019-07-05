@@ -1,14 +1,14 @@
-import * as express from 'express';
-import Users from './users.entity';
-import { getRepository } from "typeorm";
-import ValidationMiddleware from '../middleware/validation.mid';
-import CreateUsersDto from './users.dto';
 import { NextFunction } from 'connect';
+import * as express from 'express';
+import { getRepository } from 'typeorm';
+import validationMiddleware from '../middleware/validation.mid';
+import CreateUsersDto from './users.dto';
+import Users from './users.entity';
 
 class UsersController {
   public path = '/users';
   public router = express.Router();
-  public usersRepository = getRepository(Users)
+  public usersRepository = getRepository(Users);
 
   constructor() {
     this.initializeRoutes();
@@ -18,8 +18,8 @@ class UsersController {
     this.router.get(`${this.path}/:id`, this.getUserById);
     this.router
       .all(`${this.path}/*`)
-      .post(this.path, ValidationMiddleware(CreateUsersDto), this.createUser)
-      .put(`${this.path}/:id`, ValidationMiddleware(CreateUsersDto), this.modifyUser)
+      .post(this.path, validationMiddleware(CreateUsersDto), this.createUser)
+      .put(`${this.path}/:id`, validationMiddleware(CreateUsersDto), this.modifyUser)
       .delete(`${this.path}/id`, this.deleteUser);
   }
   private getAllUsers = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
@@ -33,7 +33,7 @@ class UsersController {
     if (users) {
       response.send(users);
     } else {
-      next()
+      next();
     }
   }
   private createUser = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
@@ -42,7 +42,7 @@ class UsersController {
     if (createResponse) {
       response.send(createResponse);
     } else {
-      next()
+      next();
     }
   }
   private modifyUser = async (request: express.Request, response: express.Response, next: express.NextFunction) => {

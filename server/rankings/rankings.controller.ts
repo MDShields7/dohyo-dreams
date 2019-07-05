@@ -1,13 +1,13 @@
 import * as express from 'express';
-import Rankings from './rankings.entity';
 import { getRepository } from 'typeorm';
-import ValidationMiddleware from '../middleware/validation.mid';
+import validationMiddleware from '../middleware/validation.mid';
 import CreateRankingsDto from './rankings.dto';
+import Rankings from './rankings.entity';
 
 class RankingsController {
   public path = '/rankings';
   public router = express.Router();
-  private rankingsRepository = getRepository(Rankings)
+  private rankingsRepository = getRepository(Rankings);
 
   constructor() {
     this.initializeRoutes();
@@ -18,8 +18,8 @@ class RankingsController {
     this.router.get(`${this.path}/:id`, this.getRankingById);
     this.router
       .all(`${this.path}/*`)
-      .post(this.path, ValidationMiddleware(CreateRankingsDto), this.createRanking)
-      .put(`${this.path}/:id`, ValidationMiddleware(CreateRankingsDto), this.modifyRanking)
+      .post(this.path, validationMiddleware(CreateRankingsDto), this.createRanking)
+      .put(`${this.path}/:id`, validationMiddleware(CreateRankingsDto), this.modifyRanking)
       .delete(`${this.path}/id`, this.deleteRanking);
   }
   private getAllRankings = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
@@ -32,7 +32,7 @@ class RankingsController {
     if (rankings) {
       response.send(rankings);
     } else {
-      next()
+      next();
     }
   }
   private createRanking = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
@@ -41,7 +41,7 @@ class RankingsController {
     if (createResponse) {
       response.send(createResponse);
     } else {
-      next()
+      next();
     }
   }
   private modifyRanking = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
@@ -51,7 +51,7 @@ class RankingsController {
     if (updateResponse) {
       response.send(updateResponse);
     } else {
-      next()
+      next();
     }
   }
   private deleteRanking = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
