@@ -5,7 +5,7 @@ import locale from './tournaments.locale.enum';
 @Entity()
 class Tournaments {
   @PrimaryGeneratedColumn()
-  public id: number;
+  public id?: number;
 
   @Column()
   public name: string;
@@ -21,7 +21,8 @@ class Tournaments {
 
   @Column({
     type: 'enum',
-    enum: 'locale',
+    enum: locale,
+    default: locale.Tokyo,
   })
   public location: locale;
 

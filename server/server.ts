@@ -1,5 +1,6 @@
-import 'dotenv/config';
-import 'reflect-metadata';
+require('dotenv').config();
+import { } from 'reflect-metadata';
+// import 'reflect-metadata';
 import { createConnection } from 'typeorm';
 import App from './app';
 import config from './ormconfig';
@@ -25,9 +26,6 @@ validateEnv();
       new WrestlersController(),
       new RankingsController(),
     ],
-    // [
-    //   new VersionController(),
-    // ],
   );
   app.listen();
 })();

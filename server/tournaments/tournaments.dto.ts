@@ -1,4 +1,4 @@
-import { IsBoolean, IsString } from 'class-validator';
+import { IsBoolean, IsEnum, IsString } from 'class-validator';
 import locale from './tournaments.locale.enum';
 
 class CreateTournamentsDto {
@@ -14,7 +14,7 @@ class CreateTournamentsDto {
   @IsBoolean()
   public cancelled: boolean;
 
-  @IsString()
+  @IsEnum(locale)
   public location: locale;
 }
 

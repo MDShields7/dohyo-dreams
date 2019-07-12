@@ -36,13 +36,10 @@ class TournamentsController {
     }
   }
   private createTournament = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
-    const tournamentsData: Tournaments = request.body;
-    const createResponse = await this.tournamentsRepository.create(tournamentsData);
-    if (createResponse) {
-      response.send(createResponse);
-    } else {
-      next();
-    }
+    const tournamentsData: CreateTournamentsDto = request.body;
+    const newTournament = this.tournamentsRepository.create(tournamentsData);
+    await this.tournamentsRepository.save(newTournament);
+    response.send(newTournament);
   }
   private modifyTournament = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
     const id = request.params.id;

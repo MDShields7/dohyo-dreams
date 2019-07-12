@@ -37,13 +37,10 @@ class UsersController {
     }
   }
   private createUser = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
-    const usersData: Users = request.body;
-    const createResponse = await this.usersRepository.create(usersData);
-    if (createResponse) {
-      response.send(createResponse);
-    } else {
-      next();
-    }
+    const usersData: CreateUsersDto = request.body;
+    const newUser = this.usersRepository.create(usersData);
+    await this.usersRepository.save(newUser);
+    response.send(newUser);
   }
   private modifyUser = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
     const id = request.params.id;

@@ -1,4 +1,3 @@
-
 import { ConnectionOptions } from 'typeorm';
 
 const config: ConnectionOptions = {

@@ -19,6 +19,7 @@
     ],
     "import-name": false,
     "no-console": false,
+    "ordered-imports": false,
     "object-literal-sort-keys": false
   },
   "rulesDirectory": []

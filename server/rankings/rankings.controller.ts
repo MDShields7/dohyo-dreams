@@ -36,13 +36,11 @@ class RankingsController {
     }
   }
   private createRanking = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
-    const tournamentsData: Rankings = request.body;
-    const createResponse = await this.rankingsRepository.create(tournamentsData);
-    if (createResponse) {
-      response.send(createResponse);
-    } else {
-      next();
-    }
+    const rankingsData: CreateRankingsDto = request.body;
+    const newRanking = this.rankingsRepository.create(rankingsData);
+    await this.rankingsRepository.save(newRanking);
+    response.send(newRanking);
+
   }
   private modifyRanking = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
     const id = request.params.id;
