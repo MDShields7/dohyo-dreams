@@ -1,13 +1,14 @@
-import { IsString } from 'class-validator';
+import { IsString, IsInt } from 'class-validator';
 
 class CreateRankingsDto {
   @IsString()
   public rank: string;
 
-  @IsString()
-  public tournament: string;
+  @IsInt()
+  public tournamentId: number;
 
-  @IsString()
-  public wrestler: string;
+  @IsInt()
+  public wrestlerId: number;
 }
+
 export default CreateRankingsDto;

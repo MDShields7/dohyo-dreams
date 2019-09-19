@@ -35,13 +35,10 @@ class WrestlersController {
     }
   }
   private createWrestler = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
-    const wrestlersData: Wrestlers = request.body;
-    const createResponse = await this.wrestlersRepository.create(wrestlersData);
-    if (createResponse) {
-      response.send(createResponse);
-    } else {
-      next();
-    }
+    const wrestlersData: CreateWrestlersDto = request.body;
+    const newWrestler = this.wrestlersRepository.create(wrestlersData);
+    await this.wrestlersRepository.save(newWrestler);
+    response.send(newWrestler);
   }
   private modifyWrestler = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
     const id = request.params.id;

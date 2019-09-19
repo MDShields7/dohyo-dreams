@@ -3,18 +3,15 @@
     "sourceMap": true,
     "target": "es2017",
     "outDir": "./dist",
-    "baseUrl": "./server",
+    "baseUrl": "./src",
     "alwaysStrict": true,
     "noImplicitAny": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
     // "moduleResolution": "node",
-    // "allowSyntheticDefaultImports": true,
-    // "module": "commonjs",
-    // "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   },
   "include": [
-    "server/**/*.ts"
+    "src/**/*.ts"
   ],
   "exclude": [
     "node_modules"
