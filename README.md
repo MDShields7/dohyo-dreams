@@ -1,8 +1,7 @@
 # Documentation: dohyo-dreams
 A RESTful API for Japanese Sumo Wrestling.
 
-![Sumo wrestler](http://www.sumo.or.jp/img/sumo_data/rikishi/270x474/20160019.jpg "Sumo wrestler")
-Sumo wrestler, Asanoyama, who won the May 2019 tournament, and a favorite of the developer.
+![Sumo wrestler](https://upload.wikimedia.org/wikipedia/commons/b/b8/Sumo_Wrestling.jpg "Sumo wrestler")<br>
 
 ## Contents 
 [Goals](#user-contents-goals)<br/>
