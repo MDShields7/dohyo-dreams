@@ -1,68 +1,77 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Documentation: dohyo-dreams
+A RESTful API for Japanese Sumo Wrestling.
 
-## Available Scripts
+## Contents 
+[Goals](#user-contents-goals)<br/>
+[EndPoints](#user-contents-endpoints)<br/>
+⋅⋅* [Tournaments](#user-content-tournaments)<br/>
+⋅⋅* [Wrestlers](#user-content-wrestlers)<br/>
+⋅⋅* [Rankings Chart](#user-content-rankings-chart)<br/>
 
-In the project directory, you can run:
+### GOALs
+__The First Japanese Sumo API__
+Sumo fans can find contain vast amounts of sumo data at http://sumodb.sumogames.de, to my knowledge, there is no API for sumo. 
+__Free and Easy to Use__
+No login or authentication required for GET requests. 
+__Community Resource__
+My hope is that applications, and sumo fantasy leagues can begin to utilize and contribute to this API.
 
-### `npm start`
+### ENDPOINTS
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Each path will be proceeded by the protocol and path, but these are not determined at this time. 
+'<protocol>/<domain>/tournaments'
+may become, for example
+'https://sumo-api.com/tournaments'
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Responses will be given in JSON format.
 
-### `npm test`
+#### TOURNAMENTS
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Wrestlers, or 'basho' in Japanese, take place every two months starting with January, thus there will be 6 rankings charts released by the Japanese Sumo Association in a year. 
 
-### `npm run build`
+GET '<protocol>/<domain>/tournaments'
+'[
+  "id": 1,
+  "name": "September 2019",
+  "dateStart": "2019-09-08",
+  "dateEnd": "2019-09-22",
+  "cancelled": false,
+  "location": "Tokyo"
+]'
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+#### WRESTLERS
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Wrestlers, or 'rikishi' in Japanese, must fight every tournament to keep and improve their rankings, except for the the top two ranks. Wrestlers typically are Japanese and have been wrestling since high school age. The mawashi is the belt worn during the match, and each wrestler may choose his own color.
 
-### `npm run eject`
+GET '<protocol>/<domain>/wrestlers'
+'[
+  "id": 1,
+  "familyName": "Sato",
+  "givenName": "Takanobu",
+  "ringName": "Sato Takakeisho",
+  "birthDate": "1996-08-05",
+  "birthPlace": "Hyogo, Japan",
+  "height": 175,
+  "weight": 169,
+  "retired": false,
+  "mawashi": "800080"
+]'
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### RANKINGS CHART
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The Rankings chart, or 'banzuke' in Japanese, is released prior to each tournament. Only the top 2 divisions (70 or so wrestlers) get salaries are served, while the hundreds of others serve those top wrestlers.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+GET '<protocol>/<domain>/rankings-chart'
+'[
+  "id": 1,
+  "familyName": "Sato",
+  "givenName": "Takanobu",
+  "ringName": "Sato Takakeisho",
+  "birthDate": "1996-08-05",
+  "birthPlace": "Hyogo, Japan",
+  "height": 175,
+  "weight": 169,
+  "retired": false,
+  "mawashi": "800080"
+]'
