@@ -1,6 +1,7 @@
 import * as express from 'express';
 import { getRepository } from 'typeorm';
 import validationMiddleware from '../middleware/validation.mid';
+import loggerMiddleware from '../middleware/logger.mid';
 import CreateTournamentsDto from './tournaments.dto';
 import Tournaments from './tournaments.entity';
 
@@ -14,15 +15,16 @@ class TournamentsController {
   }
 
   private initializeRoutes() {
-    this.router.get(this.path, this.getAllTournaments);
-    this.router.get(`${this.path}/:id`, this.getTournamentById);
+    this.router.get(this.path, loggerMiddleware, this.getAllTournaments);
+    this.router.get(`${this.path}/:id`, loggerMiddleware, this.getTournamentById);
     this.router
       .all(`${this.path}/*`)
-      .post(this.path, validationMiddleware(CreateTournamentsDto), this.createTournament)
-      .put(`${this.path}/:id`, validationMiddleware(CreateTournamentsDto), this.modifyTournament)
-      .delete(`${this.path}/id`, this.deleteTournament);
+      .post(this.path, loggerMiddleware, validationMiddleware(CreateTournamentsDto), this.createTournament)
+      .put(`${this.path}/:id`, loggerMiddleware, validationMiddleware(CreateTournamentsDto), this.modifyTournament)
+      .delete(`${this.path}/:id`, loggerMiddleware, this.deleteTournament);
   }
   private getAllTournaments = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
+    // const tournaments = await this.tournamentsRepository.find({ relations: ['rankings', 'rankings.wrestler'] });
     const tournaments = await this.tournamentsRepository.find();
     response.send(tournaments);
   }

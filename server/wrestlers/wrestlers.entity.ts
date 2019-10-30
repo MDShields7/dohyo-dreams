@@ -34,7 +34,7 @@ class Wrestlers {
   public mawashi: string;
 
   @OneToMany(() => Rankings, (ranking: Rankings) => ranking.wrestler)
-  public rankings: Rankings[];
+  public rankings: Rankings;
 }
 
 export default Wrestlers;

@@ -1,14 +1,13 @@
-// import * as dotEnv from 'dotenv';
-// dotEnv.config();
-// import 'reflect-metadata';
-
 require('dotenv').config();
 import { } from 'reflect-metadata';
 import { createConnection } from 'typeorm';
 import App from './app';
 import config from './ormconfig';
 
+import Controller from './interfaces/interface.controller';
+
 import RankingsController from './rankings/rankings.controller';
+import RankChartsController from './rankCharts/rankCharts.controller';
 import TournamentsController from './tournaments/tournaments.controller';
 import UsersController from './users/users.controller';
 import validateEnv from './utils/validateEnv';
@@ -25,10 +24,11 @@ validateEnv();
   }
   const app = new App(
     [
-      new UsersController(),
       new TournamentsController(),
       new WrestlersController(),
       new RankingsController(),
+      new RankChartsController(),
+      new UsersController(),
     ],
   );
   app.listen();

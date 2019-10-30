@@ -4,11 +4,11 @@ class CreateRankingsDto {
   @IsString()
   public rank: string;
 
-  @IsInt()
-  public tournamentId: number;
+  // @IsInt()
+  // public tournament: number;
 
-  @IsInt()
-  public wrestlerId: number;
+  // @IsInt()
+  // public wrestler: number;
 }
 
 export default CreateRankingsDto;

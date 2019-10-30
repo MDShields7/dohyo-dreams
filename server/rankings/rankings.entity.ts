@@ -13,7 +13,10 @@ class Rankings {
   @ManyToOne(() => Tournaments, (tournament: Tournaments) => tournament.rankings)
   public tournament: Tournaments;
 
-  @ManyToOne(() => Wrestlers, (wrestler: Wrestlers) => wrestler.rankings)
+  @ManyToOne(() => Wrestlers, (wrestler: Wrestlers) => wrestler.rankings, {
+    cascade: true,
+    eager: true,
+  })
   public wrestler: Wrestlers;
 }
 

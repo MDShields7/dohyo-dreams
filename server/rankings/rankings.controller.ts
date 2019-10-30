@@ -1,6 +1,7 @@
 import * as express from 'express';
 import { getRepository } from 'typeorm';
 import validationMiddleware from '../middleware/validation.mid';
+import loggerMiddleware from '../middleware/logger.mid';
 import CreateRankingsDto from './rankings.dto';
 import Rankings from './rankings.entity';
 
@@ -14,19 +15,27 @@ class RankingsController {
   }
 
   private initializeRoutes() {
-    this.router.get(this.path, this.getAllRankings);
-    this.router.get(`${this.path}/:id`, this.getRankingById);
+    this.router.get(this.path, loggerMiddleware, this.getAllRankings);
+    this.router.get(`${this.path}/:id`, loggerMiddleware, this.getRankingById);
     this.router
       .all(`${this.path}/*`)
-      .post(this.path, validationMiddleware(CreateRankingsDto), this.createRanking)
-      .put(`${this.path}/:id`, validationMiddleware(CreateRankingsDto), this.modifyRanking)
-      .delete(`${this.path}/id`, this.deleteRanking);
+      .post(this.path, loggerMiddleware, validationMiddleware(CreateRankingsDto), this.createRanking)
+      .put(`${this.path}/:id`, loggerMiddleware, validationMiddleware(CreateRankingsDto), this.modifyRanking)
+      .delete(`${this.path}/:id`, loggerMiddleware, this.deleteRanking);
   }
-  private getAllRankings = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
+  private getAllRankings = async (
+    request: express.Request,
+    response: express.Response,
+    next: express.NextFunction
+  ) => {
     const rankings = await this.rankingsRepository.find();
     response.send(rankings);
   }
-  private getRankingById = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
+  private getRankingById = async (
+    request: express.Request,
+    response: express.Response,
+    next: express.NextFunction
+  ) => {
     const id = request.params.id;
     const rankings = await this.rankingsRepository.findOne(id);
     if (rankings) {
@@ -35,14 +44,22 @@ class RankingsController {
       next();
     }
   }
-  private createRanking = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
+  private createRanking = async (
+    request: express.Request,
+    response: express.Response,
+    next: express.NextFunction
+  ) => {
     const rankingsData: CreateRankingsDto = request.body;
     const newRanking = this.rankingsRepository.create(rankingsData);
     await this.rankingsRepository.save(newRanking);
     response.send(newRanking);
 
   }
-  private modifyRanking = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
+  private modifyRanking = async (
+    request: express.Request,
+    response: express.Response,
+    next: express.NextFunction
+  ) => {
     const id = request.params.id;
     const rankingsData: Rankings = request.body;
     const updateResponse = await this.rankingsRepository.update(id, rankingsData);
@@ -52,7 +69,11 @@ class RankingsController {
       next();
     }
   }
-  private deleteRanking = async (request: express.Request, response: express.Response, next: express.NextFunction) => {
+  private deleteRanking = async (
+    request: express.Request,
+    response: express.Response,
+    next: express.NextFunction
+  ) => {
     const id = request.params.id;
     const deleteResponse = await this.rankingsRepository.delete(id);
     if (deleteResponse) {
