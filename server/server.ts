@@ -2,9 +2,7 @@ require('dotenv').config();
 import { } from 'reflect-metadata';
 import { createConnection } from 'typeorm';
 import App from './app';
-import config from './ormconfig';
-
-import Controller from './interfaces/interface.controller';
+import * as config from './ormconfig';
 
 import RankingsController from './rankings/rankings.controller';
 import RankChartsController from './rankCharts/rankCharts.controller';
