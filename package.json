@@ -16,7 +16,7 @@
     "express": "^4.16.4",
     "express-session": "^1.16.1",
     "http-server": "^0.11.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "lodash.isequal": "^4.5.0",
     "massive": "^5.7.7",
     "node-sass": "^4.11.0",
