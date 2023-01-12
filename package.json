@@ -10,7 +10,7 @@
     "breakpoint-sass": "^2.7.1",
     "chroma-js": "^2.0.3",
     "class-transformer": "^0.2.0",
-    "class-validator": "^0.9.1",
+    "class-validator": "^0.14.0",
     "dotenv": "^6.2.0",
     "envalid": "^4.1.4",
     "express": "^4.16.4",
